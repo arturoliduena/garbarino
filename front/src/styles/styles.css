@@ -1,0 +1,23 @@
+.background {
+}
+
+.centrado {
+	text-align: center;
+}
+
+input {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; 
+    padding: 1px 2px 1px 1px;
+    margin: 10px 5px;
+}
+
+.barRight{
+	border: 2px solid black;
+	min-height: 200px;
+	text-align: center;
+}
+

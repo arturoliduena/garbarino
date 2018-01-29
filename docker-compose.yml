@@ -1,0 +1,33 @@
+version: '2'
+services:
+  nginx:
+    image: nginx
+    volumes:
+      - ./front/dist:/var/www/
+      - ./default:/etc/nginx/conf.d/default.conf
+    ports:
+      - "90:80"
+    links:
+      - "web:web"
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: garbarino
+      POSTGRES_DB: garbarinodb
+    ports: 
+      - "5432:5432"
+  web:
+    build: .
+    command:  npm start
+    volumes:
+      - ./garbarinoAPI/bin:/back/bin
+      - ./garbarinoAPI/routes:/back/routes
+      - ./garbarinoAPI/views:/back/views
+      - ./garbarinoAPI/public:/back/public
+      - ./garbarinoAPI/models:/back/models
+      - ./garbarinoAPI/db:/back/db
+    links:
+      - "postgres:postgres"
+    ports:
+      - "3000:3000"
