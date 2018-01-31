@@ -1,24 +1,24 @@
-# Garbarino
+# instrucciones para correr el proyecto - Garbarino
 
 ## clonar repositorio:
-
+```
 git clone https://github.com/arturoliduena/garbarino.git 
-
+```
 ## Instalando Docker
 
 **Linux**
 
-Para instalar la última versión de_docker_ vamos a usar el script que nos ofrecen ellos en [get.docker.com](https://get.docker.com/) Si entramos a ese link, vamos a ver que en esa URL hay un script .sh, que básicamente permite instalar docker en varias plataformas conocidas. Para ejecutarlo usamos el siguiente comando en la terminal: curl -sSL https://get.docker.com/ | sh
+Para instalar la última versión de docker vamos a usar el script que nos ofrecen ellos en [get.docker.com](https://get.docker.com/) Si entramos a ese link, vamos a ver que en esa URL hay un script .sh, que básicamente permite instalar docker en varias plataformas conocidas. Para ejecutarlo usamos el siguiente comando en la terminal: ```curl -sSL https://get.docker.com/ | sh```
 
 o
 
-wget -qO- https://get.docker.com/ | sh
+```wget -qO- https://get.docker.com/ | sh```
 
 Probablemente le pidan permisos de root, ya que dentro del script utiliza sudo.
 Cuando se termina de ejecutar el comando, el script sugiere que hagamos el siguiente comando:
-
+```
 sudo usermod -aG docker
-
+```
 **Windows y Mac**
 
 Para instalarlo en windows es necesario tener habilitada la opción de virtualización en la BIOS.
@@ -34,11 +34,12 @@ Ejecuten docker-machine ls , para saber los datos de la máquina virtual que les
 
 Para correr el proyecto utilice docker-compose up
 
-linux
+Linux
 ```
 sudo docker-compose up --build
 ```
-en su Web Browser:
+
+En su Web Browser:
 
 > http://localhost:90
 
