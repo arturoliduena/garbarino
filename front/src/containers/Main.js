@@ -6,15 +6,20 @@ import {
 } from 'react-router-dom'
 import Home from '../components/Home'
 import Items from '../components/Items'
+import '../styles/main.css';
 
 const Main = () => (
   <Router>
     <div>
+      <div className="main-header">
+        <div className="logo"> <a href="https://www.garbarino.com"> </a></div>
+      </div>
+      <div className="category-menu">
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/items">productos</Link></li>
+        <li className="li-option"><Link to="/"><span className="category-text">Home</span></Link></li>
+        <li className="li-option"><Link to="/items"><span className="category-text">productos</span></Link></li>
       </ul>
-
+      </div>
       <hr/>
 
       <Route exact path="/" component={Home}/>

@@ -11,7 +11,9 @@ router.get('/', function(req, res, next) {
 //CREAR ITEM
 
 router.post('/item', function (req, res){
+	console.log('into the post create item - body', req.body)
 	Item.create(req.body).then (function(item){
+		console.log('after of create item', item)
 		return res.send(item)
 	})
 })
@@ -19,7 +21,6 @@ router.post('/item', function (req, res){
 //GET ITEMS ALL
 
 router.get('/items', function(req, res){
-	console.log('into de getItems-------------------------------')
 	Item.findAll().then(function(items){
 		return res.send(items)
 	})
